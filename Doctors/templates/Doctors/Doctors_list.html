@@ -1,9 +1,19 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    Doctors List
+    Doctors
 {% endblock %}
 
 {% block content %}
-    <H1>Doctors List</H1>
+    <section>
+    <H1>Doctors</H1>
+
+    {% for Doctors in Doctors %}
+        <article class="Doctors">
+            <h2>{{ Doctors.title }}</h2>
+            <p>{{ Doctors.date }}</p>
+            <p>{{ Doctors.body }}</p>
+        </article>
+    {% endfor %}
+    </section>
 {% endblock %}
