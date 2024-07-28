@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import Doctors
+from .models import Doctor
 
 # Create your views here.
-def Doctors_list(request):
-    doctors = Doctors.objects.all()
-    return render(request, 'Doctors/Doctors_list.html', { 'Doctors': Doctors })
+def doctors_list(request):
+    doctors = Doctor.objects.all()
+    return render(request, 'doctors/doctors_list.html', { 'doctors': doctors })
