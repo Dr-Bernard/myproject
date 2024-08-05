@@ -8,12 +8,17 @@
     <section>
     <H1>Doctors</H1>
 
-    {% for Doctor in doctors %}
-        <article class="Doctor">
-            <h2>{{ Doctor.title }}</h2>
-            <p>{{ Doctor.date }}</p>
-            <p>{{ Doctor.body }}</p>
+    {% for doctor in doctors %}
+        <article class="doctor">
+            <p>Slug: {{ doctor.slug }}</p>
+            <a href="{%  url 'Doctors:page' slug=doctor.slug %}">
+                {{ doctor.title }}
+            </a>
+            {% comment %} <h2>{{ Doctor.title }}</h2> {% endcomment %}
+            <p>{{ doctor.date }}</p>
+            <p>{{ doctor.body }}</p>
         </article>
     {% endfor %}
 </section>
 {% endblock %}
+
